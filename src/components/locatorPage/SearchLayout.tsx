@@ -248,10 +248,7 @@ const SearchLayout = (): JSX.Element => {
                       entityType: "location",
                       fieldApiName: "address.line1",
                     },
-                    {
-                      entityType: "location",
-                      fieldApiName: "address.line2",
-                    },
+
                     {
                       entityType: "location",
                       fieldApiName: "address.city",
@@ -260,10 +257,6 @@ const SearchLayout = (): JSX.Element => {
                       entityType: "location",
                       fieldApiName: "address.postalCode",
                     },
-                    // {
-                    //   entityType: "location",
-                    //   fieldApiName: "builtin.location",
-                    // },
                   ]}
                 />
                 <button

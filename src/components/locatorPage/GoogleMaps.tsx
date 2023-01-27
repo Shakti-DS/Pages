@@ -303,12 +303,31 @@ function UnwrappedGoogleMaps({
   };
 
   function Infowindow(i: Number, result: any): void {
+    console.log("result", result);
     const MarkerContent = (
-      <div className="markerContent w-48 md:w-[350px] font-universpro font-normal text-darkgrey text-xs md:text-sm leading-6">
-        <div className="nameData font-bold text-sm md:text-base">
-          {result.name}
+      <a
+        href="#"
+        className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      >
+        <img
+          className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+          src={result.rawData.c_descriptionInfo.image.url}
+          alt=""
+        />
+        <div className="flex flex-col justify-between p-4 leading-normal">
+          {/* <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> */}
+          <h1 className="flex text justify-between font-bold">
+            {result.name}
+            <span>{metersToMiles(result.distance ?? 0)} miles</span>
+          </h1>
+          {/* </h5> */}
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            {result?.rawData.address?.line1}{" "}
+            <span>{result?.rawData.address?.countryCode} </span>
+          </p>
+          <p>{result?.rawData.mainPhone}</p>
         </div>
-      </div>
+      </a>
     );
     let string = renderToString(MarkerContent);
     infoWindow.setContent(string);
