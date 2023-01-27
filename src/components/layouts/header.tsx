@@ -47,34 +47,6 @@ const Header = () => {
 
   return (
     <>
-      {/* <div id="header" className="header-nav">
-        <div className="container header-content">
-          <div className="header-content-left">
-            <a className="button" href="#">
-              <span className="is-hidden-touch">Find a restaurant</span>
-            </a>
-            <a className="button" href="#" title="Book now">
-              Book now
-            </a>
-          </div>
-          <div className="header-content-middle">
-            <a className="logo" href="/">
-              <img className="" src={logo} alt="Prezzo" />
-            </a>
-          </div>
-          <div className="header-content-right lg:hidden">
-            <span className="navbar-burger burger" data-target="navbarMenu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-        </div>
-        <div className="container">
-          <nav className="navbar">{linkDoms}</nav>
-        </div>
-      </div> */}
-
       <header className="h-30 bg-secondary-btn-bg-color">
         <nav className="relative px-2 py-4">
           <div className="container mx-auto flex justify-between items-center">
