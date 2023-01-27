@@ -294,3 +294,11 @@ nav[aria-label="Pagination"] button:disabled{
 .footer_links .column ul li {
     @apply leading-5 text-base inline-block w-full
 }
+
+
+.bg-img {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

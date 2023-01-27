@@ -59,8 +59,8 @@ const Header = () => {
               <img className="" src={logo} alt="Prezzo"/>
             </a>
           </div>
-          <div class="header-content-right lg:hidden">
-            <span class="navbar-burger burger" data-target="navbarMenu">
+          <div className="header-content-right lg:hidden">
+            <span className="navbar-burger burger" data-target="navbarMenu">
               <span></span>
               <span></span>
               <span></span>

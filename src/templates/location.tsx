@@ -9,6 +9,7 @@ import {
   TemplateRenderProps,
 } from "@yext/pages";
 import * as React from "react";
+import Hours from "../components/Hours";
 import "../index.css";
 
 export const config: TemplateConfig = {
@@ -25,7 +26,10 @@ export const config: TemplateConfig = {
       "description",
       "hours",
       "slug",
-      "yextDisplayCoordinate",
+        "geocodedCoordinate",
+        "services",
+        "photoGallery",
+        "c_descriptionInfo",
     ],
     filter: {
       entityTypes: ["location"],
@@ -63,13 +67,54 @@ const Location: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
-  const { name, address, hours, mainPhone } = document;
+    const {
+        name,
+        address,
+        openTime,
+        hours,
+        mainPhone,
+        geocodedCoordinate,
+        services,
+        description,
+        photoGallery,
+        c_descriptionInfo,
+    } = document;
 
   return (
     <>
-      <h1 className="font-bold"> {name} </h1>
-      <h2 className="font-title-text-font">{address.line1}</h2>
-      <p> {mainPhone}</p>
+          {/* <h1 className="font-bold"> {name} </h1>
+            <h2 className="font-title-text-font">
+                {address.line1} <p>{address?.postalCode}</p>
+            </h2>
+            <p> {mainPhone}</p> */}
+
+          <div>
+              {photoGallery?.map((imgs: any) => {
+                  return (
+                      <div
+                          className="w-full bg-img"
+                          style={{ backgroundImage: `url('${imgs?.image?.url}')` }}
+                      >
+                          {/* <img src={imgs?.image?.url} alt="Sunset in the mountains" /> */}
+                      </div>
+                  );
+              })}
+              <div className="px-6 py-4 flex gap-3">
+                  <div className="font-bold text-xl mb-2">
+                      <h1>{name}</h1>
+                      <h2 className="text-gray-700 text-base">
+                          {address.line1}
+                          <p>
+                              {address?.postalCode} , {address?.countryCode}
+                          </p>
+                      </h2>
+                      <p>{mainPhone}</p>
+                  </div>
+
+                  <div> {hours && <Hours hours={hours} />}</div>
+              </div>
+              <p>{c_descriptionInfo?.description}</p>
+          </div>
     </>
   );
 };
