@@ -114,8 +114,8 @@ const Location: Template<TemplateRenderProps> = ({
           <div>
             <StaticMap
 
-              latitude={geocodedCoordinate.latitude}
-              longitude={geocodedCoordinate.longitude}
+              latitude={geocodedCoordinate?.latitude}
+              longitude={geocodedCoordinate?.longitude}
             />
           </div>
 
