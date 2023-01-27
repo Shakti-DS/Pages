@@ -140,38 +140,34 @@ const Hours = (props: Hours) => {
     const { title, hours } = props;
     // console.log('props', props)
     return (
-        // <div style={{ height: "600px", width: "500px" }}>
-        //     <div className="text-xl font-semibold mb-4">{title}</div>
-        //     <table>
-        //         <thead className="sr-only">
-        //             <tr>
-        //                 <th>Day of the Week</th>
-        //                 <th>Hours</th>
-        //             </tr>
-        //         </thead>
-        //         <tbody>
-        //             <td>{renderHours(hours)}</td>
-        //         </tbody>
-        //     </table>
-        // </div>
-
+    // <div style={{ height: "600px", width: "500px" }}>
+    //     <div className="text-xl font-semibold mb-4">{title}</div>
+    //     <table>
+    //         <thead className="sr-only">
+    //             <tr>
+    //                 <th>Day of the Week</th>
+    //                 <th>Hours</th>
+    //             </tr>
+    //         </thead>
+    //         <tbody>
+    //             <td>{renderHours(hours)}</td>
+    //         </tbody>
+    //     </table>
+    // </div>
 
         <table className="table-fixed">
-            <thead >
+            <thead>
                 <tr>
-                    <th>Day of the Week</th>
-                    <th>Hours</th>
+                    {/* <th>Day of the Week</th> */}
+                    {/* <th>Hours</th> */}
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>{renderHours(hours)}</td>
                 </tr>
-
             </tbody>
         </table>
-
-
     );
 };
 

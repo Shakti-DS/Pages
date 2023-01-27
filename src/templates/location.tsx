@@ -10,6 +10,7 @@ import {
 } from "@yext/pages";
 import * as React from "react";
 import Hours from "../components/Hours";
+import StaticMap from "../components/locationDetails/StaticMap";
 import "../index.css";
 
 export const config: TemplateConfig = {
@@ -99,7 +100,7 @@ const Location: Template<TemplateRenderProps> = ({
                       </div>
                   );
               })}
-              <div className="px-6 py-4 flex gap-3">
+        <div className="px-6 py-4 flex gap-3 flex justify-between">
                   <div className="font-bold text-xl mb-2">
                       <h1>{name}</h1>
                       <h2 className="text-gray-700 text-base">
@@ -109,9 +110,18 @@ const Location: Template<TemplateRenderProps> = ({
                           </p>
                       </h2>
                       <p>{mainPhone}</p>
-                  </div>
+          </div>
+          <div>
+            <StaticMap
 
-                  <div> {hours && <Hours hours={hours} />}</div>
+              latitude={geocodedCoordinate.latitude}
+              longitude={geocodedCoordinate.longitude}
+            />
+          </div>
+
+          <div>
+            <h2 className="text-black">Time Zone Store</h2>
+            {hours && <Hours hours={hours} />}</div>
               </div>
               <p>{c_descriptionInfo?.description}</p>
           </div>
