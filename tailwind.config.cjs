@@ -32,6 +32,7 @@ module.exports = {
       "coloured-text-color": "#215732",
       "button-border-color": "#215732",
       "primary-btn-bg-color": "#215732",
+      "secondary-btn-bg-color": "#88a756",
       "primary-btn-bg-hover-color": "#f7edd9",
       "primary-btn-text-color": "#f7edd9",
       "primary-btn-text-hover-color": "#215732",

@@ -1,9 +1,9 @@
 import * as React from "react";
 import logo from "../../images/Prezzo_Logo_RGB_OffWhite.png";
-import pizzaLogo from "../../images/pasta-pizza-vino.png"
+import pizzaLogo from "../../images/pasta-pizza-vino.png";
 
-var currentTime = new Date()
-var year = currentTime.getFullYear()
+var currentTime = new Date();
+var year = currentTime.getFullYear();
 
 type Link = {
    label: string;
@@ -17,10 +17,9 @@ const links: Link[] = [
    },
    {
       label: "Copyright/Legal Info",
-      url: "/copyright"
+      url: "/copyright",
    },
 ];
-
 
 const Footer = () => {
    const linkDoms = links.map((link) => (
@@ -33,74 +32,211 @@ const Footer = () => {
 
    return (
       <>
-         <footer className="footer">
-            <div className="container">
-               <div className="footerLogo">
-                  <a className="logo" href="/">
-                     <img className="" src={logo} alt="Prezzo" />
+        <footer className="footer-1 bg-green-100 py-8 sm:py-12  bg-secondary-btn-bg-color">
+           <div className="container mx-auto px-4">
+              <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 justify-center">
+                 <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
+                    <h5 className="text-xl font-bold mb-6 hover:text-header-cta-bg-color">
+                       Features
+                    </h5>
+                    <ul className="list-none footer-links">
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Cool stuff
                   </a>
-               </div>
-               <div className="footer_links">
-                  <div className="column">
-                     <a href="/" target="_self" title="Prezzo" rel="noreferrer">
-                        <img src={pizzaLogo} alt="Logo" className="fadein imgFinal"/>
-                     </a>
-                     <div className="social-media">
-                        <a href="#" target="_blank" title="Facebook" rel="noreferrer"><i className="fa fa-facebook-square" aria-hidden="true"></i></a>
-                        <a href="#" target="_blank" title="Instagram" rel="noreferrer"><i className="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" target="_blank" title="Twitter" rel="noreferrer"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                     </div>
-                  </div>
-                  <div className="column">
-                     <h5>About Prezzo</h5>
-                     <ul>
-                        <li><a href="https://jobs.prezzorestaurants.co.uk/" title="Careers">Careers</a></li>
-                        <li><a href="/community-commitments/" title="Community Commitments">Community Commitments</a></li>
-                        <li><a href="/health/hub/" title="Health Hub">Health Hub</a></li>
-                        <li><a href="/offers/" title="Offers">Offers</a></li>
-                        <li><a href="/competitions/" title="Competitions">Competitions</a></li>
-                     </ul>
-                  </div>
-                  <div className="column">
-                     <h5>Menus</h5>
-                     <ul>
-                        <li><a href="/menus/main-menu/" title="Main Menu">Main Menu</a></li>
-                        <li><a href="/menus/kids-menu-2021/" title="Kid's Menu">Kid's Menu</a></li>
-                        <li><a href="/menus/drinks-menu-2021/" title="Drinks Menu">Drinks Menu</a></li>
-                     </ul>
-                  </div>
-                  <div className="column">
-                     <h5>Privacy</h5>
-                     <ul>
-                        <li><a href="/privacy-policy/" title="Privacy Policy">Privacy Policy</a></li>
-                        <li><a href="/footer-links/website-terms-of-use/" title="Terms of use">Terms of use</a></li>
-                     </ul>
-                  </div>
-                  <div className="column">
-                     <h5>Booking</h5>
-                     <ul>
-                        <li><a href="/find-and-book/" title="Book a table">Book a table</a></li>
-                        <li><a href="/order-online/" title="Delivery &amp; Collection">Delivery &amp; Collection</a></li>
-                        <li><a href="/celebration-booking/" title="Event Bookings">Event Bookings</a></li>
-                     </ul>
-                  </div>
-                  <div className="column">
-                     <h5>FAQs</h5>
-                     <ul>
-                        <li><a href="https://support.prezzorestaurants.co.uk/hc/en-us/requests/new" title="Contact Us">Contact Us</a></li>
-                        <li><a href="https://support.prezzorestaurants.co.uk/hc/en-us" title="FAQs">FAQs</a></li>
-                        <li><a href="/about-prezzo/modern-slavery-statement/" title="Modern Slavery Statement">Modern Slavery Statement</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-
-
-
-
-         </footer>
-      </>
-   );
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800  hover:text-header-cta-bg-color"
+                          >
+                             Random feature
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Team feature
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Stuff for developers
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Another one
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Last time
+                          </a>
+                       </li>
+                    </ul>
+                 </div>
+                 <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
+                    <h5 className="text-xl font-bold mb-6 hover:text-header-cta-bg-color ">
+                       Resources
+                    </h5>
+                    <ul className="list-none footer-links">
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Resource
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Resource name
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Another resource
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Final resource
+                          </a>
+                       </li>
+                    </ul>
+                 </div>
+                 <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+                    <h5 className="text-xl font-bold mb-6 hover:text-header-cta-bg-color">
+                       About
+                    </h5>
+                    <ul className="list-none footer-links">
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Team
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Locations
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Privacy
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Terms
+                          </a>
+                       </li>
+                    </ul>
+                 </div>
+                 <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+                    <h5 className="text-xl font-bold mb-6 hover:text-header-cta-bg-color">
+                       Help
+                    </h5>
+                    <ul className="list-none footer-links">
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Support
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Help Center
+                          </a>
+                       </li>
+                       <li className="mb-2">
+                          <a
+                             href="#"
+                             className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800 hover:text-header-cta-bg-color"
+                          >
+                             Contact Us
+                          </a>
+                       </li>
+                    </ul>
+                 </div>
+              </div>
+              <div className="sm:flex sm:flex-wrap sm:-mx-4 mt-6 pt-6 sm:mt-12 sm:pt-12 border-t justify-center">
+                 <div className="sm:w-full px-4 md:w-1/6">
+                    <strong className="hover:text-header-cta-bg-color">FWR</strong>
+                 </div>
+                 <div className="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
+                    <h6 className="font-bold mb-2 hover:text-header-cta-bg-color">
+                       Address
+                    </h6>
+                    <address className="not-italic mb-4 text-sm hover:text-header-cta-bg-color">
+                       123 6th St.
+                       <br />
+                       Melbourne, FL 32904
+                    </address>
+                 </div>
+                 <div className="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
+                    <h6 className="font-bold mb-2 hover:text-header-cta-bg-color">
+                       Free Resources
+                    </h6>
+                    <p className="mb-4 text-sm hover:text-header-cta-bg-color">
+                       Use our HTML blocks for{" "}
+                       <strong className="hover:text-header-cta-bg-color">FREE</strong>
+                       .<br />
+                       <em className="hover:text-header-cta-bg-color">
+                          All are MIT License
+                       </em>
+                    </p>
+                 </div>
+                 <div className="px-4 md:w-1/4 md:ml-auto mt-6 sm:mt-4 md:mt-0">
+                    <button className="px-4 py-2 bg-full-bleed-bg-color  text-black">
+                       Get Started
+                    </button>
+                 </div>
+              </div>
+           </div>
+        </footer>
+     </>
+  );
 };
 
 export default Footer;

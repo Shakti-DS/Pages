@@ -8,7 +8,10 @@ import Faqs from "../components/Faqs";
 import PageLayout from "../components/PageLayout";
 import BreadCrumbs from "../components/BreadCrumbs";
 import StaticMap from "../components/StaticMap";
-import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
+import {
+  formatPhoneNumber,
+  formatPhoneNumberIntl,
+} from "react-phone-number-input";
 import "../index.css";
 import {
   Template,
@@ -21,12 +24,11 @@ import {
   HeadConfig,
 } from "@yext/pages";
 
-
 export const config: TemplateConfig = {
   stream: {
     $id: "locations",
     filter: {
-      entityTypes: ["location"]
+      entityTypes: ["location"],
     },
     fields: [
       "id",
@@ -42,7 +44,7 @@ export const config: TemplateConfig = {
       "slug",
       "paymentOptions",
       "geocodedCoordinate",
-	    "yextDisplayCoordinate",
+      "yextDisplayCoordinate",
       "services",
       "covidMessaging",
       // "c_featuredFAQs.question",
@@ -65,8 +67,8 @@ export const config: TemplateConfig = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
-export const getPath: GetPath<TemplateProps> = ({document}) => {
-  return document.id.toString()+'.html';
+export const getPath: GetPath<TemplateProps> = ({ document }) => {
+  return document.id.toString() + ".html";
 };
 
 /**
@@ -75,7 +77,11 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
  * will be used to generate the inner contents of the HTML document's <head> tag.
  * This can include the title, meta tags, script tags, etc.
  */
- export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document,
+}): HeadConfig => {
   return {
     title: document.name,
     charset: "UTF-8",
@@ -91,8 +97,11 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
   };
 };
 
-
- const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+const Location: Template<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document,
+}) => {
   const {
     name,
     address,
@@ -103,55 +112,56 @@ export const getPath: GetPath<TemplateProps> = ({document}) => {
     mainPhone,
     photoGallery,
     geocodedCoordinate,
-	  yextDisplayCoordinate,
+    yextDisplayCoordinate,
     services,
     covidMessaging,
     c_featuredFAQs,
     dm_directoryParents,
-    paymentOptions
+    paymentOptions,
   } = document;
 
   var formattedPhone = formatPhoneNumber(mainPhone);
 
   return (
     <>
-      <PageLayout >
-        <Banner text={name}>
-        </Banner>
+      <PageLayout>
+        <Banner text={name}></Banner>
         <div className="centered-container">
           {/* <BreadCrumbs name={name} parents={dm_directoryParents} baseUrl={relativePrefixToRoot}></BreadCrumbs> */}
           <div className="section">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3">
-                <div className="address-phone space-y-5">
-                  <h2 className="text-xl font-semibold mb-4">Address</h2>
-                  <Address address={address}></Address>
-                  <div className="space-x-3">
-                    <span>&#128222;</span>
-                    <span>{formattedPhone}</span>
-                  </div>
-                </div>
-                <Hours title="Hours" hours={hours}></Hours>
-                <div className="description">
-                  <div className="text-xl font-semibold mb-4">About {name} - {neighborhood}</div>
-                  <p>{description}</p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3">
+              <div className="address-phone space-y-5">
+                <h2 className="text-xl font-semibold mb-4">Address</h2>
+                <Address address={address}></Address>
+                <div className="space-x-3">
+                  <span>&#128222;</span>
+                  <span>{formattedPhone}</span>
                 </div>
               </div>
+              <Hours title="Hours" hours={hours}></Hours>
+              <div className="description">
+                <div className="text-xl font-semibold mb-4">
+                  About {name} - {neighborhood}
+                </div>
+                <p>{description}</p>
+              </div>
+            </div>
           </div>
           <div className="section">
-            <PhotoGallery 
+            <PhotoGallery
               photoGallery={photoGallery}
               height="300"
               width="450"
-              ></PhotoGallery>
+            ></PhotoGallery>
           </div>
           <div className="section">
             {/* <Faqs faqs={c_featuredFAQs}></Faqs> */}
           </div>
           <div className="section">
-          <StaticMap
-                  latitude={yextDisplayCoordinate.latitude}
-                  longitude={yextDisplayCoordinate.longitude}
-          />
+            <StaticMap
+              latitude={yextDisplayCoordinate.latitude}
+              longitude={yextDisplayCoordinate.longitude}
+            />
           </div>
         </div>
       </PageLayout>

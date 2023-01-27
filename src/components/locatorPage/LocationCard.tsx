@@ -16,10 +16,12 @@ const metersToMiles = (meters: number) => {
   return miles.toFixed(2);
 };
 
+
+
 const LocationCard: CardComponent<Location> = ({ result }) => {
   const { address, hours, mainPhone, timezone } = result.rawData;
 
-  console.log("result.rawData", result.rawData);
+  // console.log("result.rawData", result.rawData);
   const formattedPhone = formatPhoneNumber(mainPhone);
 
   const [timeStatus, setTimeStatus] = useState("");
@@ -34,7 +36,12 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   return (
     <div className={`location result`} id={`result-${result.index}`}>
       <a href={result?.rawData?.slug}>
-        <h3 className="">{result.rawData.name}</h3>
+        <h3 className="flex justify-between" style={{ padding: "0px" }}>
+          {result.rawData.name}{" "}
+          <span className="text-right">
+            {metersToMiles(result.distance ?? 0)} miles
+          </span>
+        </h3>
       </a>
       <Address address={address} />
       <GetDirection

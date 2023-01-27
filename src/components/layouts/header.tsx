@@ -35,28 +35,31 @@ const links: Link[] = [
   {
     label: "Working with us",
     url: "#",
-  }
+  },
 ];
 
 const Header = () => {
   const linkDoms = links.map((link) => (
-      <a className="navbar-item" href={link.url} >
-        <span>{link.label}</span>
-      </a>
+    <a className="navbar-item" href={link.url}>
+      <span>{link.label}</span>
+    </a>
   ));
 
   return (
     <>
-      <div id="header" className="header-nav">
+      {/* <div id="header" className="header-nav">
         <div className="container header-content">
           <div className="header-content-left">
             <a className="button" href="#">
-              <span className="is-hidden-touch">Find a restaurant</span></a>
-            <a className="button" href="#" title="Book now">Book now</a>
+              <span className="is-hidden-touch">Find a restaurant</span>
+            </a>
+            <a className="button" href="#" title="Book now">
+              Book now
+            </a>
           </div>
           <div className="header-content-middle">
             <a className="logo" href="/">
-              <img className="" src={logo} alt="Prezzo"/>
+              <img className="" src={logo} alt="Prezzo" />
             </a>
           </div>
           <div className="header-content-right lg:hidden">
@@ -68,11 +71,37 @@ const Header = () => {
           </div>
         </div>
         <div className="container">
-          <nav className="navbar">
-            {linkDoms}
-          </nav>
+          <nav className="navbar">{linkDoms}</nav>
         </div>
-      </div>
+      </div> */}
+
+      <header className="h-30 bg-secondary-btn-bg-color">
+        <nav className="relative px-2 py-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <img
+              src="https://avrasys.hu/logoipsum-logo-54.svg"
+              alt="Tailwindcss Navigation"
+            />
+            <ul className="hidden md:flex space-x-6 ">
+              <li>
+                <a href="#" className="hover:text-header-cta-bg-color">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-header-cta-bg-color">
+                  Faq
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-header-cta-bg-color">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
     </>
   );
 };

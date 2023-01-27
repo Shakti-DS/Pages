@@ -15,9 +15,11 @@ import {
 } from "@yext/search-headless-react";
 import SearchLayout from "../components/locatorPage/SearchLayout";
 import { AnswerExperienceConfig } from "../config/globalConfig";
+import Header from "../components/layouts/header";
+import Footer from "../components/layouts/footer";
 
 export const getPath: GetPath<TemplateProps> = () => {
-  return `/locatorSearch`;
+  return `/index.html`;
 };
 
 /*
@@ -66,6 +68,7 @@ const locatorSearch: Template<TemplateRenderProps> = ({
 
   return (
     <>
+      <Header />
       <SearchHeadlessProvider
         experienceKey={AnswerExperienceConfig.experienceKey}
         locale={AnswerExperienceConfig.locale}
@@ -77,6 +80,8 @@ const locatorSearch: Template<TemplateRenderProps> = ({
       >
         <SearchLayout />
       </SearchHeadlessProvider>
+
+      <Footer />
     </>
   );
 };
