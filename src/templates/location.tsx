@@ -73,6 +73,7 @@ const Location: Template<TemplateRenderProps> = ({
 }) => {
   const {
     name,
+    _site,
     address,
     openTime,
     hours,
@@ -87,16 +88,13 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       <Header />
-
       <div>
         {photoGallery?.map((imgs: any) => {
           return (
             <div
               className="w-full bg-img"
               style={{ backgroundImage: `url('${imgs?.image?.url}')` }}
-            >
-              {/* <img src={imgs?.image?.url} alt="Sunset in the mountains" /> */}
-            </div>
+            ></div>
           );
         })}
         <div className="px-6 py-4 flex gap-3 flex justify-between">

@@ -66,9 +66,16 @@ const locatorSearch: Template<TemplateRenderProps> = ({
     disableDefaultUI: true,
   };
 
+  console.log('_site', _site)
+
+
+
   return (
     <>
-      <Header />
+      <Header
+        HeaderLogo={_site?.c_logo?.image?.url}
+        HeaderLink={_site?.c_menu}
+      />
       <SearchHeadlessProvider
         experienceKey={AnswerExperienceConfig.experienceKey}
         locale={AnswerExperienceConfig.locale}
@@ -81,7 +88,9 @@ const locatorSearch: Template<TemplateRenderProps> = ({
         <SearchLayout />
       </SearchHeadlessProvider>
 
-      <Footer />
+      <Footer
+        abouts={_site?.c_abouts} menu={_site.c_menu} ourServices={_site.c_ourServices} resources={_site.c_resources}
+      />
     </>
   );
 };
