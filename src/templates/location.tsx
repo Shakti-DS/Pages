@@ -87,7 +87,10 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <Header />
+      <Header
+        HeaderLogo={_site?.c_logo?.image?.url}
+        HeaderLink={_site?.c_menu}
+      />
       <div>
         {photoGallery?.map((imgs: any) => {
           return (
@@ -125,7 +128,9 @@ const Location: Template<TemplateRenderProps> = ({
       </div>
 
       {/* <Faqs /> */}
-      <Footer />
+      <Footer
+        abouts={_site?.c_abouts} menu={_site.c_menu} ourServices={_site.c_ourServices} resources={_site.c_resources}
+      />
     </>
   );
 };

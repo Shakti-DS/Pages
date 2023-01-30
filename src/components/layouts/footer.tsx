@@ -9,7 +9,7 @@ type data = {
 
 const Footer = (data: any) => {
    const { abouts, menu, ourServices, resources } = data;
-   console.log("about", abouts);
+   // console.log("about", abouts);
    return (
       <>
          <footer className="footer-1 bg-green-100 py-8 sm:py-12  bg-secondary-btn-bg-color">
