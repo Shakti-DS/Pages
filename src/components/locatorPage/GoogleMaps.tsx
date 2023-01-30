@@ -114,7 +114,7 @@ function UnwrappedGoogleMaps({
     fillColor: pinStyles.fill,
     scale: 1.1,
     fillOpacity: 1,
-    strokeColor: pinStyles.stroke,
+    strokeColor: pinStyles?.stroke,
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };

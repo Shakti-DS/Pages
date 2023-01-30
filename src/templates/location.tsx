@@ -10,6 +10,8 @@ import {
 } from "@yext/pages";
 import * as React from "react";
 import Hours from "../components/Hours";
+import Footer from "../components/layouts/footer";
+import Header from "../components/layouts/header";
 import StaticMap from "../components/locationDetails/StaticMap";
 import "../index.css";
 
@@ -68,52 +70,47 @@ const Location: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
-    const {
-        name,
-        address,
-        openTime,
-        hours,
-        mainPhone,
-        geocodedCoordinate,
-        services,
-        description,
-        photoGallery,
-        c_descriptionInfo,
-    } = document;
+  const {
+    name,
+    address,
+    openTime,
+    hours,
+    mainPhone,
+    geocodedCoordinate,
+    services,
+    description,
+    photoGallery,
+    c_descriptionInfo,
+  } = document;
 
   return (
     <>
-          {/* <h1 className="font-bold"> {name} </h1>
-            <h2 className="font-title-text-font">
-                {address.line1} <p>{address?.postalCode}</p>
-            </h2>
-            <p> {mainPhone}</p> */}
+      <Header />
 
-          <div>
-              {photoGallery?.map((imgs: any) => {
-                  return (
-                      <div
-                          className="w-full bg-img"
-                          style={{ backgroundImage: `url('${imgs?.image?.url}')` }}
-                      >
-                          {/* <img src={imgs?.image?.url} alt="Sunset in the mountains" /> */}
-                      </div>
-                  );
-              })}
+      <div>
+        {photoGallery?.map((imgs: any) => {
+          return (
+            <div
+              className="w-full bg-img"
+              style={{ backgroundImage: `url('${imgs?.image?.url}')` }}
+            >
+              {/* <img src={imgs?.image?.url} alt="Sunset in the mountains" /> */}
+            </div>
+          );
+        })}
         <div className="px-6 py-4 flex gap-3 flex justify-between">
-                  <div className="font-bold text-xl mb-2">
-                      <h1>{name}</h1>
-                      <h2 className="text-gray-700 text-base">
-                          {address.line1}
-                          <p>
-                              {address?.postalCode} , {address?.countryCode}
-                          </p>
-                      </h2>
-                      <p>{mainPhone}</p>
+          <div className="font-bold text-xl mb-2">
+            <h1>{name}</h1>
+            <p>{mainPhone}</p>
+            <h2 className="text-gray-700 text-base">
+              {address.line1}
+              <p>
+                {address?.postalCode},{address?.countryCode}
+              </p>
+            </h2>
           </div>
           <div>
             <StaticMap
-
               latitude={geocodedCoordinate?.latitude}
               longitude={geocodedCoordinate?.longitude}
             />
@@ -121,10 +118,13 @@ const Location: Template<TemplateRenderProps> = ({
 
           <div>
             <h2 className="text-black">Time Zone Store</h2>
-            {hours && <Hours hours={hours} />}</div>
-              </div>
-              <p>{c_descriptionInfo?.description}</p>
+            {hours && <Hours hours={hours} />}
           </div>
+        </div>
+        <p>{c_descriptionInfo?.description}</p>
+      </div>
+
+      <Footer />
     </>
   );
 };
