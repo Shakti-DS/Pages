@@ -12,6 +12,7 @@ import * as React from "react";
 import Hours from "../components/Hours";
 import Footer from "../components/layouts/footer";
 import Header from "../components/layouts/header";
+import Faqs from "../components/locationDetails/Faqs";
 import StaticMap from "../components/locationDetails/StaticMap";
 import "../index.css";
 
@@ -121,9 +122,11 @@ const Location: Template<TemplateRenderProps> = ({
             {hours && <Hours hours={hours} />}
           </div>
         </div>
+        {/* <h3>Description</h3> */}
         <p>{c_descriptionInfo?.description}</p>
       </div>
 
+      {/* <Faqs /> */}
       <Footer />
     </>
   );
